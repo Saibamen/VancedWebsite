@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-@media (prefers-color-scheme: dark), (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
     body {
         animation: openAn 0.5s ease-in;
         background-color: #121212;
