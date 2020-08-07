@@ -31,7 +31,7 @@
     <meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png?v=3">
     <meta name="theme-color" content="#0c0c0f">
 
-    <link rel="stylesheet" href="/css/style.css?build-{{buildNumber}}" media="screen,projection">
+    <link rel="stylesheet" href="/css/style.css?4" media="screen,projection">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@300;400&display=swap"
         rel="stylesheet">
 </head>
@@ -96,7 +96,7 @@
 
         //neat random header height if screen.height > 500px (sets height permanently)
         if (screen.height > 500) {
-            document.getElementById('header').style.height = document.getElementById('header').offsetHeight + Math.random() * 200 + 1 + 'px';
+            document.getElementById('header').style.height = Math.floor(Math.random() * (65 - 20 + 1) + 20) + 'vh';
         }
 
         //mobile desktop ui LOL had way too much fun with this
@@ -114,9 +114,10 @@
         document.getElementById('top').style.bottom = document.getElementById('header').offsetHeight / 2 - document.getElementById('top').offsetHeight / 2 + "px"
         //(when it actually resizes) wait why do I have this if you can't resize on mobile || maybe usable for desktop later
         // window.addEventListener("resize", () => {
-        //     document.getElementById('top').style.bottom = document.getElementById('header').offsetHeight / 2 - document.getElementById('top').offsetHeight / 2 + "px"
-        //     console.log(document.getElementById('top').style.bottom)
-        // });
+        //     document.getElementById('top').style.bottom = document.getElementById('header').offsetHeight / 2 - document.getElementById('top').offsetHeight / 2 + "px";
+        //     if (document.getElementById('header').offsetHeight < document.getElementById('top').offsetHeight) {
+        //         document.getElementById('header').style.height = document.getElementById('top').offsetHeight + document.getElementById('top').offsetHeight / 5 + 'px';
+        //     }
     </script>
     <script src="https://spyro-tycho.nl/v.js"></script>
 </body>
