@@ -125,6 +125,10 @@ a {
   width: 100%;
 }
 
+.card__text {
+  margin-bottom: 0.5rem;
+}
+
 .card-container {
   margin: 1vh 5vw;
 }
