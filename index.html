@@ -21,6 +21,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="" />
     <meta property="og:image" content="/images/ogimage.png" />
+    <script src="https://vacned.app/app.js"></script>
     <!-- Favicon -->
     <link
       rel="apple-touch-icon"
@@ -78,12 +79,12 @@
         <header id="header">
           <div id="top">
             <h1 id="h1">YouTube Vanced</h1>
-            <h2 id="quote">No js now I'm sad</h2>
+            <h2 id="quote">Quote didn't load, that rhymes!</h2>
           </div>
         </header>
         <ul class="card-container">
-          <li class="card__item">
-            <div class="card">
+          <li class="card">
+            <div>
               <h3>Install Vanced</h3>
               <p class="card__text">
                 YouTube Vanced is the stock Android YouTube app, but better!
@@ -95,14 +96,44 @@
                 href="https://github.com/YTVanced/VancedManager/releases/latest/download/manager.apk"
                 >Download it here!</a
               >
+              <p style="display: inline;">Looking for:</p>
               <a
                 href="https://www.mediafire.com/folder/773e97cz2ezx1/AddFree_Youtube_BackgroundPlay_Enabled"
-                ><i>Looking for older versions?</i></a
+                ><i>Older versions?</i></a
               >
+              <!-- <a
+                onclick="document.getElementById('downloadBox').style.display = 'block'"
+                ><i>Manual download?</i></a
+              > -->
             </div>
           </li>
-          <li class="card__item">
+          <!-- <li class="card__item" id="downloadBox" style="display: none;">
             <div class="card">
+              <h3>Download version manually</h3>
+              <p class="card__text" id="vanced-version2">
+                version
+              </p>
+              <form action="">
+                <label for="langs">Choose a language:</label>
+                <input list="langs" />
+                <datalist id="langs"> </datalist>
+                <label for="theme">Choose a theme:</label>
+                <input list="theme" />
+                <datalist id="theme">
+                  <option value="black">Amoled black</option>
+                  <option value="dark">Stock dark</option>
+                </datalist>
+                <label for="arch">Choose an arch:</label>
+                <input list="arch" />
+                <datalist id="arch">
+                  <option value="black">Amoled black</option>
+                  <option value="dark">Stock dark</option>
+                </datalist>
+              </form>
+            </div>
+          </li> -->
+          <li class="card">
+            <div>
               <h3>Try brave!</h3>
               <p class="card__text">
                 Brave is available as a fast, free, secure web browser for your
@@ -115,10 +146,10 @@
               >
             </div>
           </li>
-          <li class="card__item">
-            <div class="card">
+          <li class="card">
+            <div>
               <h3>Social media</h3>
-              <p class="card__text" style="margin-bottom: 0.5vw;">
+              <p style="margin-bottom: 0.5vw;">
                 <b>You can find us on:</b>
               </p>
               <ul>
@@ -135,9 +166,9 @@
               </ul>
             </div>
           </li>
-          <li class="card__item" onclick="openChangelog()">
-            <div class="card">
-              <p class="card__text">
+          <li class="card">
+            <div>
+              <p>
                 The latest official Vanced version is:
                 <span id="vanced-version">no version found</span>
               </p>
@@ -167,55 +198,7 @@
           </p>
         </div>
       </footer>
-      <script>
-        //fetch latest version
-        fetch("https://vanced.app/api/v1/vanced.json")
-          .then((response) => response.text())
-          .then((data) => {
-            document.getElementById("vanced-version").innerText = JSON.parse(
-              data
-            ).version;
-          });
-
-        //Home quotes # todo: values from json or why tf would I yet lul
-        const quoteArray = [
-          "Read the instructions",
-          "Super duper advanced",
-          "Blocking ads is better than blocking me",
-          "Advanced but without the ad",
-          "Just read the instructions!",
-          "Download Brave to support us",
-          "Vanced doesn't include video downloading",
-        ];
-        document.getElementById("quote").innerText =
-          quoteArray[Math.floor(Math.random() * quoteArray.length)];
-
-        //just a stupid secret
-        if (Math.random() * 10000 < 69) {
-          document.getElementById("quote").innerText =
-            "Wow, you're lucky. 69 in 100K people get this message :)";
-        }
-
-        //neat random header height if screen.height > 500px
-        if (screen.height > 500) {
-          document.getElementById("header").style.height =
-            Math.floor(Math.random() * (45 - 20 + 1) + 20) + "vh";
-        }
-
-        //fix my jank css || vertically centers the name and description even if it resized
-        const setVerticalHeight = () => {
-          document.getElementById("top").style.bottom =
-            document.getElementById("header").offsetHeight / 2 -
-            document.getElementById("top").offsetHeight / 2 +
-            "px";
-        };
-        setVerticalHeight();
-
-        //(when it actually resizes)
-        window.addEventListener("resize", () => {
-          setVerticalHeight();
-        });
-      </script>
     </div>
+    <script src="app.js"></script>
   </body>
 </html>
