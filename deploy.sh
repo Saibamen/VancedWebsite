@@ -16,4 +16,4 @@ ssh $SERVER_USERNAME@$SERVER_NAME "docker run --rm -v $WEB_PATH:/git-project $UP
 echo "***********[ Update the build number for the site ]***********"
 ssh $SERVER_USERNAME@$SERVER_NAME "echo $TRAVIS_BUILD_NUMBER > $BUILD_VERSION_PATH"
 ssh $SERVER_USERNAME@$SERVER_NAME "echo $TRAVIS_COMMIT > $COMMIT_NUMBER_PATH"
-ssh $SERVER_USERNAME@$SERVER_NAME "cd $WEB_PATH/ && ./buildinfo.sh"
+ssh $SERVER_USERNAME@$SERVER_NAME "cd $WEB_PATH/ && chmod +x ./buildinfo.sh"
