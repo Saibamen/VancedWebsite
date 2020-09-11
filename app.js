@@ -18,7 +18,7 @@ const quoteArray = [
 document.getElementById("quote").innerText = quoteArray[Math.floor(Math.random() * quoteArray.length)];
 
 //just a stupid secret
-if (Math.random() * 10000 < 69) {
+if (Math.random() * 100000 < 69) {
   document.getElementById("quote").innerText = "Wow, you're lucky. only 69 in 100K people get this message :)";
 }
 
