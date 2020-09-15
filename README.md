@@ -1,3 +1,3 @@
 # VancedWebsite
 
-Vanced Website repository, not ment for reporting Vanced bugs
+Vanced Website repository, not meant for reporting Vanced bugs
