@@ -27,12 +27,6 @@ if (screen.height > 500) {
   document.getElementById("header").style.height = Math.floor(Math.random() * (45 - 20 + 1) + 20) + "vh";
 }
 
-//fix my jank css || vertically centers the name and description even if it resized
-const setVerticalHeight = () => {
-  document.getElementById("top").style.bottom = document.getElementById("header").offsetHeight / 2 - document.getElementById("top").offsetHeight / 2 + "px";
-};
-setVerticalHeight();
-
 //(when it actually resizes)
 window.addEventListener("resize", () => {
   setVerticalHeight();
